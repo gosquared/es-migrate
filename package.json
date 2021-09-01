@@ -1,5 +1,5 @@
 {
-  "name": "elasticsearch-migration-pipeline",
+  "name": "@gosquared/es-migrate",
   "version": "1.0.0",
   "description": "Tool for migrating documents from one cluster to another",
   "main": "index.js",
