@@ -1,7 +1,7 @@
 {
   "name": "elasticsearch-migration-pipeline",
   "version": "1.0.0",
-  "description": "",
+  "description": "Tool for migrating documents from one cluster to another",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
