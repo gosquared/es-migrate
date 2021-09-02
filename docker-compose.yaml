@@ -1,22 +1,12 @@
 services:
   es1:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
+    image: elasticsearch:2.3.4
     container_name: es-migrate-es1
-    environment:
-      - node.name=es-migrate-es1
-      - cluster.name=es-migrate-docker-cluster
-      - cluster.initial_master_nodes=es-migrate-es1
-      - bootstrap.memory_lock=true
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-    ulimits:
-      memlock:
-        soft: -1
-        hard: -1
-      nofile:
-        soft: 65535
-        hard: 65535
+    command: elasticsearch -Des.http.compression=true -Des.http.cors.enabled=true -Des.http.cors.allow-origin=\"/https?:\/\/localhost\(:[0-9]+\)?/\" -Des.script.inline=true -Des.script.indexed=true
     ports:
-      - 9244:9200
+      - 9250:9200
+    environment:
+      - ES_HEAP_SIZE=500M
     networks:
       - es-migrate
 
@@ -26,7 +16,8 @@ services:
     environment:
       - node.name=es-migrate-es2
       - cluster.name=es-migrate-docker-cluster
-      - discovery.seed_hosts=es-migrate-es1
+      - cluster.initial_master_nodes=es-migrate-es2
+      # - discovery.seed_hosts=es-migrate-es1
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     ulimits:
