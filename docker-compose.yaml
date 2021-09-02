@@ -1,0 +1,46 @@
+services:
+  es1:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
+    container_name: es-migrate-es1
+    environment:
+      - node.name=es-migrate-es1
+      - cluster.name=es-migrate-docker-cluster
+      - cluster.initial_master_nodes=es-migrate-es1
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65535
+        hard: 65535
+    ports:
+      - 9244:9200
+    networks:
+      - es-migrate
+
+  es2:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
+    container_name: es-migrate-es2
+    environment:
+      - node.name=es-migrate-es2
+      - cluster.name=es-migrate-docker-cluster
+      - discovery.seed_hosts=es-migrate-es1
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65535
+        hard: 65535
+    ports:
+      - 9245:9201
+    networks:
+      - es-migrate
+
+networks:
+  es-migrate:
+    driver: bridge
