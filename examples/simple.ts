@@ -1,10 +1,5 @@
 import { pipeline } from 'stream';
 
-function createQuery() {
-  const query = { match_all: {} };
-  return { query };
-}
-
 const { FROM_ES, TO_ES } = process.env;
 
 const source = new Reader(FROM_ES);
