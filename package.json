@@ -1,7 +1,7 @@
 {
   "name": "@gosquared/es-migrate",
   "version": "1.0.0",
-  "description": "Tool for migrating documents from one cluster to another",
+  "description": "Tool to migrate and transform documents from one cluster to another.",
   "main": "index.js",
   "scripts": {
     "start-services": "docker-compose up -d es1 es2",
