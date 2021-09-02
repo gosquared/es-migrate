@@ -5,8 +5,7 @@ function createQuery() {
   return { query };
 }
 
-const { FROM_ES } = process.env;
-const { TO_ES } = process.env;
+const { FROM_ES, TO_ES } = process.env;
 
 const source = new Reader(FROM_ES);
 const destination = new Writer(TO_ES);
