@@ -32,6 +32,15 @@ services:
     networks:
       - es-migrate
 
+  kibana:
+    image: gosquared/kibana-4
+    ports:
+      - 5137:5601
+    environment:
+      - ELASTICSEARCH_URL=http://es-migrate-es1:9200
+    networks:
+      - es-migrate
+
 networks:
   es-migrate:
     driver: bridge
