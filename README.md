@@ -3,6 +3,16 @@ Tool to migrate and transform documents from one cluster to another.
 https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/installation.html#js-compatibility-matrix
 https://opensearch.org/docs/clients/index/
 
+# Test
+
+```bash
+npm test
+# or
+npm run start-services
+npx mocha dist/test
+npm run cleanup
+```
+
 # Rationale
 We were finally upgrading our 2.3 cluster to 7.x. Due to breaking changes, some mappings needed to be changed and documents reindexed. It is easier to migrate direct from 2.x to 7.x than stepping through 5.x and 6.x, although not 'easy' to do either!
 
