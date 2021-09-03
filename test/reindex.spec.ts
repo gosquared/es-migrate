@@ -16,5 +16,7 @@ describe('reindex', () => {
 
   before(createDocument);
 
-  it('reindexes document');
+  it('reindexes document', () => {
+
+  });
 });
