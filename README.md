@@ -13,6 +13,9 @@ npx mocha dist/test
 npm run cleanup
 ```
 
+# es commands
+curl -XGET 'http://localhost:9250/test/_search?pretty'
+
 # Rationale
 We were finally upgrading our 2.3 cluster to 7.x. Due to breaking changes, some mappings needed to be changed and documents reindexed. It is easier to migrate direct from 2.x to 7.x than stepping through 5.x and 6.x, although not 'easy' to do either!
 
