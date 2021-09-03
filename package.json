@@ -8,7 +8,7 @@
     "watch": "rm -rf dist && tsc -w",
     "start-services": "docker-compose up -d es1 es2",
     "cleanup": "docker-compose stop && docker-compose rm -f",
-    "test": "mocha test"
+    "test": "mocha dist/test"
   },
   "keywords": [],
   "author": "Geoff Wagstaff <geoff@gosquared.com>",
