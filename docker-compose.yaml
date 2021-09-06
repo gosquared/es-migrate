@@ -28,7 +28,7 @@ services:
         soft: 65535
         hard: 65535
     ports:
-      - 9245:9201
+      - 9245:9200
     networks:
       - es-migrate
 
