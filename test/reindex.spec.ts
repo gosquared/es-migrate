@@ -22,7 +22,7 @@ describe('reindex', () => {
 
   // https://www.elastic.co/guide/en/elasticsearch/reference/7.10/docs-reindex.html#reindex-from-remote
   const reindexDocument = async () => {
-    const host = 'http://localhost:9250';
+    const host = 'http://es-migrate-es1:9200';
     const remote = { host };
     const index = 'test';
     const query = { match_all: {} };
