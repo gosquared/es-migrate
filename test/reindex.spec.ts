@@ -38,7 +38,11 @@ describe('reindex', () => {
   before(refresh);
   before(reindexDocument);
 
-  it('reindexes document', () => {
-
+  it('reindexes document', async () => {
+    const index = 'test';
+    const id = '1';
+    const params = { index, id };
+    const result = await client2.get(params);
+    console.log(result);
   });
 });
