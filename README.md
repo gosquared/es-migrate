@@ -9,6 +9,7 @@ https://opensearch.org/docs/clients/index/
 npm test
 # or
 npm run start-services
+npm run watch
 npx mocha dist/test
 npm run cleanup
 ```
