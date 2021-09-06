@@ -20,6 +20,7 @@ services:
       # - discovery.seed_hosts=es-migrate-es1
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - reindex.remote.whitelist=es-migrate-*:*
     ulimits:
       memlock:
         soft: -1
