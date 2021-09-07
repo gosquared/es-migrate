@@ -38,7 +38,7 @@ describe('reindex', () => {
   before(refresh);
   before(reindexDocument);
 
-  it('reindexes document', async () => {
+  it('reindexes document from 2.3 to 7.10', async () => {
     const index = 'test';
     const id = '1';
     const params: Get = { index, id };
