@@ -14,11 +14,13 @@
   "author": "Geoff Wagstaff <geoff@gosquared.com>",
   "license": "ISC",
   "devDependencies": {
+    "@types/chai": "^4.2.21",
     "@types/elasticsearch": "^5.0.38",
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.7.10",
     "@typescript-eslint/eslint-plugin": "^4.30.0",
     "@typescript-eslint/parser": "^4.30.0",
+    "chai": "^4.3.4",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.24.2",
