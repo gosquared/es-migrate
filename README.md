@@ -11,6 +11,7 @@ npm test
 npm run start-services
 npm run watch
 npx mocha dist/test
+npx mocha --inspect dist/test/transform.spec.js
 npm run cleanup
 ```
 
