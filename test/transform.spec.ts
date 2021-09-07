@@ -1,6 +1,7 @@
 import { Client } from 'elasticsearch';
 import { Client as Client2 } from '@elastic/elasticsearch';
-import { Reindex } from '@elastic/elasticsearch/api/requestParams';
+import { Get, Reindex } from '@elastic/elasticsearch/api/requestParams';
+import { expect } from 'chai';
 
 const client = new Client({ host: 'http://localhost:9250' });
 const client2 = new Client2({ node: 'http://localhost:9245' });
@@ -39,7 +40,11 @@ describe('transform', () => {
   before(refresh);
   before(reindexDocument);
 
-  it('adds type field', () => {
-
+  it('adds type field', async () => {
+    const index = 'test';
+    const id = '1';
+    const params: Get = { index, id };
+    const result = await client2.get(params);
+    expect(result.body._source.ty).to.equal('test');
   });
 });
