@@ -2,7 +2,7 @@
   "name": "@gosquared/es-migrate",
   "version": "1.0.0",
   "description": "Tool to migrate and transform documents from one cluster to another.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "rm -rf dist && tsc || exit 0",
     "watch": "rm -rf dist && tsc -w",
