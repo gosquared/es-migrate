@@ -3,6 +3,23 @@ Tool to migrate and transform documents from one cluster to another.
 https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/installation.html#js-compatibility-matrix
 https://opensearch.org/docs/clients/index/
 
+# Set up elasticsearch
+Check out [aws-opensearch-refarch](https://github.com/gosquared/aws-opensearch-refarch) for tooling.
+# Install templates
+See [examples/template.ts](https://github.com/gosquared/es-migrate/blob/main/examples/template.ts)
+# Open network access
+Allow your new cluster to connect to the existing one.
+
+For example, on AWS, allow tcp port 9200 in the security group.
+# Transform
+Change documents in-flight.
+
+# Start
+```bash
+
+```
+
+
 # Test
 
 ```bash
