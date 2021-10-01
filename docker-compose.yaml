@@ -42,6 +42,16 @@ services:
     networks:
       - es-migrate
 
+  # https://www.elastic.co/guide/en/kibana/7.10/docker.html
+  kibana7:
+    image: docker.elastic.co/kibana/kibana:7.10.2
+    ports:
+      - 5603:5601
+    links:
+      - es2:elasticsearch
+    networks:
+      - es-migrate
+
 networks:
   es-migrate:
     driver: bridge
