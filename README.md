@@ -17,7 +17,7 @@ npm run cleanup
 ```
 
 ```bash
-# forward port 5602
+# forward port 5603
 docker-compose up -d kibana7
 docker-compose stop kibana7
 docker-compose rm -f kibana7
