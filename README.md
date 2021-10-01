@@ -16,6 +16,14 @@ npx mocha --inspect dist/test/template.spec.js
 npm run cleanup
 ```
 
+```bash
+# forward port 5602
+docker-compose up -d kibana7
+docker-compose stop kibana7
+docker-compose rm -f kibana7
+# http://localhost:5603/app/dev_tools#/console
+```
+
 # es commands
 ```bash
 curl -XGET 'http://localhost:9250/test/_search?pretty'
