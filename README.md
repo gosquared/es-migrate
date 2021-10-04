@@ -8,7 +8,7 @@ Create a new migration project:
 
     es-migrate init es-migrate-1
 
-Change to project directory. See readme for further instructions.
+Change to project directory. See [readme](https://github.com/gosquared/es-migrate-project) for further instructions.
 
     cd es-migrate-1
     cat README.md
