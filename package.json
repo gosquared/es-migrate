@@ -41,7 +41,8 @@
     "README-project.md",
     "project",
     "examples",
-    "tsconfig.json"
+    "tsconfig.json",
+    "docker-compose.yaml"
   ],
   "keywords": [
     "elasticsearch",
