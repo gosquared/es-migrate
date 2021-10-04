@@ -1,4 +1,4 @@
-Tool to migrate and transform documents from one cluster to another.
+Tool to migrate documents from one cluster to another.
 
 # Install
     npm i @gosquared/es-migrate
