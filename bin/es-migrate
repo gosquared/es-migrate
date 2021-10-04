@@ -40,7 +40,7 @@ init() {
   cp -R "$DIR/../examples" "$name/examples"
   cp "$DIR/../README-project.md" "$name/README.md"
   cp "$DIR/../project/project-package.json" "$name/package.json"
-  cp "$DIR/../.gitignore" "$name/.gitignore"
+  cp "$DIR/../project/gitignore" "$name/.gitignore"
 
   pushd "$name"
   git init
