@@ -37,7 +37,11 @@
   "files": [
     "dist",
     "README.md",
-    "bin"
+    "bin",
+    "README-project.md",
+    "project",
+    "examples",
+    "tsconfig.json"
   ],
   "keywords": [
     "elasticsearch",
