@@ -13,6 +13,7 @@
   },
   "author": "Geoff Wagstaff <geoff@gosquared.com>",
   "license": "MIT",
+  "bin": "bin/es-migrate",
   "devDependencies": {
     "@thedeveloper/eslint-config-styleguide": "^1.0.3",
     "@thedeveloper/eslint-config-ts-styleguide": "^1.0.0",
