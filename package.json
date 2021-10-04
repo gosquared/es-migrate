@@ -37,4 +37,19 @@
     "dist",
     "README.md"
   ],
+  "keywords": [
+    "elasticsearch",
+    "migrate",
+    "es",
+    "reindex",
+    "transform",
+    "move",
+    "data",
+    "documents",
+    "indexes",
+    "indices",
+    "cluster",
+    "amazon",
+    "elastic"
+  ]
 }
