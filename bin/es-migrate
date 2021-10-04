@@ -32,28 +32,30 @@ init() {
     exit 1
   fi
 
-  mkdir -p "$name"
-  cp "$DIR/../docker-compose.yaml" "$name/docker-compose.yaml"
+  git clone git@github.com:gosquared/es-migrate-project.git "$name"
   sed -i -e s/es-migrate/"$name"/g "$name/docker-compose.yaml"
 
-  cp "$DIR/../tsconfig.json" "$name/tsconfig.json"
-  cp -R "$DIR/../examples" "$name/examples"
-  cp "$DIR/../README-project.md" "$name/README.md"
-  cp "$DIR/../project/project-package.json" "$name/package.json"
-  cp "$DIR/../project/gitignore" "$name/.gitignore"
-
   pushd "$name"
-  git init
-  npm i -D \
-    typescript \
-    @gosquared/es-migrate
+  npm i
   git add .
-  git commit -m 'initial commit'
+  git commit -m 'init new project'
   popd
+}
+
+help() {
+  echo "Usage: es-migrate init [project]"
+  echo ""
+  echo "init: create a new project"
+  echo ""
+  echo "Example:"
+  echo "es-migrate init es-migrate-1"
 }
 
 case $1 in
   init)
     init $2
+  ;;
+  *)
+    help
   ;;
 esac
