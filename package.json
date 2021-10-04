@@ -36,7 +36,8 @@
   },
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "bin"
   ],
   "keywords": [
     "elasticsearch",
