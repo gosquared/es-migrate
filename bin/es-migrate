@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+set -e
+
+# https://stackoverflow.com/a/246128
+# retrieve the directory of this script
+getScriptDir() {
+  SOURCE="${BASH_SOURCE[0]}"
+  while [ -h "$SOURCE" ]; do
+    # resolve $SOURCE until the file is no longer a symlink
+    DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+    SOURCE="$(readlink "$SOURCE")"
+    # if $SOURCE was a relative symlink, we need to resolve it
+    # relative to the path where the symlink file was located
+    [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+  done
+  DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+}
+
+getScriptDir
+
+init() {
+  local name
+  name=$1
+
+  if [ -d "$name" ]
+  then
+    echo "$name exists"
+    echo ""
+    echo "you can remove it with:"
+    echo "rm -rf $name"
+    exit 1
+  fi
+
+  mkdir -p "$name"
+  cp "$DIR/../docker-compose.yaml" "$name/docker-compose.yaml"
+  sed -i -e s/es-migrate/"$name"/g "$name/docker-compose.yaml"
+
+  cp "$DIR/../tsconfig.json" "$name/tsconfig.json"
+  cp -R "$DIR/../examples" "$name/examples"
+  cp "$DIR/../README-project.md" "$name/README.md"
+  cp "$DIR/../project/project-package.json" "$name/package.json"
+  cp "$DIR/../.gitignore" "$name/.gitignore"
+
+  pushd "$name"
+  git init
+  npm i -D \
+    typescript \
+    @gosquared/es-migrate
+  git add .
+  git commit -m 'initial commit'
+  popd
+}
+
+case $1 in
+  init)
+    init $2
+  ;;
+esac
