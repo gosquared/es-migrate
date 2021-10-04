@@ -61,6 +61,10 @@ Since we work in Javascript we found it easiest to write our transforms in JS.
 # Why direct was preferable
 If we were to upgrade via 5.x and 6.x, we would need to make our services compatible with each version. Also, each node in the cluster would need to be cycled, involving manual patching and restarting the node - a labour intensive process.
 
+# Ignore linting
+```bash
+git config blame.ignoreRevsFile .ignore-revs
+```
 
 https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/installation.html#js-compatibility-matrix
 
